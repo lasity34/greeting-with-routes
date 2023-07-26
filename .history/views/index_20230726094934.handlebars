@@ -1,0 +1,44 @@
+<div class="row">
+  <h1 class="title">Greetings</h1>
+  <form action="/greeting" method="POST" class="greeting">
+    <div class="form_container">
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="{{greeting.name}}" />
+    </div>
+    <button type="submit"> Greet Me</button>
+  </form>
+  <form action="/language" method="POST">
+
+ <label for="English">English</label>
+   <input
+                  type="radio"
+                  name="language"
+                  id="English"
+                  class="language"
+                  value="English"
+                />
+  </form>
+   <label for="Spanish">Spanish</label>
+   <input
+                  type="radio"
+                  name="language"
+                  id="Spanish"
+                  class="language"
+                  value="Spanish"
+                />
+  </form>
+   <label for="Welsh">Welsh</label>
+   <input
+                  type="radio"
+                  name="language"
+                  id="Welsh"
+                  class="language"
+                  value="Welsh"
+                />
+  </form>
+  <div class="message_display">
+    <p id="message">{{message}}</p>
+  </div>
+</div>
+<script src="/js/script.js"></script>

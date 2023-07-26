@@ -1,0 +1,14 @@
+
+
+body {
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.greeting {
+    display: flex
+}

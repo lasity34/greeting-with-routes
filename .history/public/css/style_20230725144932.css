@@ -1,0 +1,39 @@
+
+
+body {
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+
+.form_container {
+    display: flex;
+    
+}
+
+label {
+    margin-right: 1em;
+}
+
+
+.greeting {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+.greeting button {
+    width: 50%;
+}

@@ -1,0 +1,57 @@
+
+
+body {
+    font-family: 'Alegreya Sans SC', sans-serif;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+h1.title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.greeting {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.greeting label {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.greeting input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.greeting button {
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.greeting button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,39 @@
+
+    <div class="dummy_container"></div>
+    <div class="greeting_container">
+ <h1 class="title">Greetings</h1>
+  <form action="/greeting" method="POST" class="greeting">
+    <div class="form_container">
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" value="{{greeting.name}}" />
+    </div>
+    <div class="language-container">
+        <div class="language-item">
+            <label for="English">English</label>
+            <input type="radio" name="language" id="English" class="language" value="English" />
+        </div>
+        <div class="language-item">
+            <label for="Spanish">Spanish</label>
+            <input type="radio" name="language" id="Spanish" class="language" value="Spanish" />
+        </div>
+        <div class="language-item">
+            <label for="Welsh">Welsh</label>
+            <input type="radio" name="language" id="Welsh" class="language" value="Welsh" />
+        </div>
+    </div>
+    <button type="submit"> Greet Me</button>
+  </form>
+  <div class="message_display">
+    <p id="message">{{message.message}}</p>
+  </div>
+    </div>
+ <div class="count_container">
+    <div>
+    <h2>Number of people greeted</h2>
+    <span>{{count.nameSet.size}}</span>
+
+    </div>
+ </div>
+
+<script src="/js/script.js"></script>

@@ -1,0 +1,129 @@
+
+body {
+    font-family: 'Alegreya Sans SC', sans-serif;
+    background-image: url('../images/greeting_background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: bisque;
+}
+
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.row {
+    display: flex;
+}
+
+.title {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* greeting message */
+
+.form_container {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    margin-right: 0.5em;
+}
+
+
+.greeting {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+.greeting button {
+    margin: 2em auto;
+    width: 50%;
+    font-size: 1.5rem;
+    padding: 10px;
+    color: #fff;
+    background-color: #2f993d;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-out;
+    cursor: pointer;
+}
+
+.greeting button:hover {
+    background-color: #1eb46c;
+}
+
+.greeting button:active {
+    background-color: #38a03f;
+}
+
+.message_display p {
+    color: #77d5cc;   /* Sets the text color */
+    font-size: 3rem;  /* Sets the font size */
+    font-weight: bold; /* Makes the text bold */
+    text-align: center; /* Centers the text */
+    transition: 1s ease-in-out; /* Transitions for the animation */
+
+    /* Adding some animation */
+    animation: fade-in-out 4s;
+}
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+   
+}
+
+/* language */
+
+
+.language-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.language-item {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Adjust as needed */
+}
+
+.language-item label {
+    font-size: 2rem;
+}
+
+.language {
+    transform: scale(1.5); /* Makes the radio button 1.5 times larger */
+    margin-right: 10px; /* Adds some space between the radio button and the label */
+}
+
+/* count */
+
+.count_container {
+    justify-self: center;
+}
