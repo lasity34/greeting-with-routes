@@ -178,12 +178,8 @@ label {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-radius: 10px;
+  
     cursor: pointer;
-}
-
-.reset-button:hover {
-    background-color: darkred;
 }
 
 .reset-container {

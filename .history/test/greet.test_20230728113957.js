@@ -49,31 +49,15 @@ describe('Greeting function', function() {
         greeting.greetMessage("Bruce")
         assert.equal('Shwmae, Bruce', greeting.getMessage().message)
     })
-    
-
-})
-
-describe('reset', function() {
-
-    const greeting = Greeting()
-
-    it('count should reset when reset is clicked ', function() {
+    it('Values should reset when reset is clicked ', function() {
 
         greeting.setLanguage("Welsh")
         greeting.greetMessage("Bruce")
         greeting.getCount()
-        greeting.reset()
+     
         assert.equal(0, greeting.getCount())
     })
-    it('message should reset when reset is clicked ', function() {
 
-        greeting.setLanguage("Welsh")
-        greeting.greetMessage("Bruce")
-        greeting.getCount()
-        greeting.reset()
-        assert.equal('', greeting.getMessage().message)
-    })
-    
 })
 
 describe('Counter', function() {

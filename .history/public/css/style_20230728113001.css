@@ -68,7 +68,6 @@ label {
 
 .greeting button {
     margin: 2em auto;
-    margin-bottom: 0;
     width: 50%;
     font-size: 1.5rem;
     padding: 10px;
@@ -178,12 +177,8 @@ label {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    border-radius: 10px;
+    margin: 4px 2px;
     cursor: pointer;
-}
-
-.reset-button:hover {
-    background-color: darkred;
 }
 
 .reset-container {

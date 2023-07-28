@@ -49,14 +49,6 @@ describe('Greeting function', function() {
         greeting.greetMessage("Bruce")
         assert.equal('Shwmae, Bruce', greeting.getMessage().message)
     })
-    
-
-})
-
-describe('reset', function() {
-
-    const greeting = Greeting()
-
     it('count should reset when reset is clicked ', function() {
 
         greeting.setLanguage("Welsh")
@@ -71,9 +63,9 @@ describe('reset', function() {
         greeting.greetMessage("Bruce")
         greeting.getCount()
         greeting.reset()
-        assert.equal('', greeting.getMessage().message)
+        assert.equal(0, greeting.getCount())
     })
-    
+
 })
 
 describe('Counter', function() {

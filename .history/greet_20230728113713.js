@@ -57,7 +57,6 @@ export default function Greeting(db) {
     greetMessage,
     getMessage,
     setLanguage,
-    getCount,
-    reset
+    getCount
   };
 }

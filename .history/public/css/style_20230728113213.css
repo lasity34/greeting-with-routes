@@ -182,10 +182,6 @@ label {
     cursor: pointer;
 }
 
-.reset-button:hover {
-    background-color: darkred;
-}
-
 .reset-container {
     display: flex;
     justify-content: center;

@@ -73,7 +73,6 @@ describe('reset', function() {
         greeting.reset()
         assert.equal('', greeting.getMessage().message)
     })
-    
 })
 
 describe('Counter', function() {

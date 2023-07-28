@@ -73,7 +73,14 @@ describe('reset', function() {
         greeting.reset()
         assert.equal('', greeting.getMessage().message)
     })
-    
+    it('language should reset when reset is clicked ', function() {
+
+        greeting.setLanguage("Welsh")
+        greeting.greetMessage("Bruce")
+        greeting.getCount()
+        greeting.reset()
+        assert.equal('', greeting.getMessage().message)
+    })
 })
 
 describe('Counter', function() {
