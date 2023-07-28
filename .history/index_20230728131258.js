@@ -14,7 +14,7 @@ const db = pgPromise()(process.env.DATABASE_URL);
 async function createTable() {
   try {
     await db.none(
-      "CREATE TABLE IF NOT EXISTS users (name TEXT PRIMARY KEY, count INTEGER NOT NULL DEFAULT 0 )"
+      "CREATE TABLE IF NOT EXISTS users (name TEXT KEY PRIMARY, count INTEGER NOT NULL DEFAULT 0 )"
     );
     console.log("Tabel created successfully");
   } catch (err) {

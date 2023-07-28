@@ -57,9 +57,8 @@ export default function Greeting(db) {
   async function getUsers() {
     try {
       const users = await db.any('SELECT * FROM users')
-      return users
-    } catch (err) {
-      console.error(err)
+    } catch (error) {
+      
     }
   }
 

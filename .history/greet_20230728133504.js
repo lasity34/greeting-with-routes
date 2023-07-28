@@ -18,7 +18,7 @@ export default function Greeting(db) {
         const user = await db.oneOrNone('SELECT * FROM users WHERE name  = $1', [name]);
 
         if (user) {
-          await db.none('UPDATE users SET count = count + 1 WHERE name = $1', [name])
+          message = "Name already used";
         }  else if (!language) {
           message = "Please select a language";
         } else {
@@ -43,8 +43,8 @@ export default function Greeting(db) {
 
   async function getCount() {
     try {
-      const result = await db.one('SELECT COUNT(*) as row_count FROM users')
-      return result.row_count
+      const result = await db.one('SELECT COUNT(*) FROM users')
+      return result.count
     } catch (err) {
       console.error(err)
     }
@@ -52,15 +52,6 @@ export default function Greeting(db) {
 
   function getMessage() {
     return { message: message };
-  }
-
-  async function getUsers() {
-    try {
-      const users = await db.any('SELECT * FROM users')
-      return users
-    } catch (err) {
-      console.error(err)
-    }
   }
 
   async function reset() {
@@ -79,7 +70,6 @@ export default function Greeting(db) {
     getMessage,
     setLanguage,
     getCount,
-    reset,
-    getUsers
+    reset
   };
 }

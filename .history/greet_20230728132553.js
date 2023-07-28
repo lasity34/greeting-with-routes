@@ -15,10 +15,10 @@ export default function Greeting(db) {
       message = "please only use letters";
     } else {
       try {
-        const user = await db.oneOrNone('SELECT * FROM users WHERE name  = $1', [name]);
+        const user = db.oneOrNone('SELECT * FROM users WHERE name  = $1', [name]);
 
         if (user) {
-          await db.none('UPDATE users SET count = count + 1 WHERE name = $1', [name])
+          message = "Name already used";
         }  else if (!language) {
           message = "Please select a language";
         } else {
@@ -35,43 +35,25 @@ export default function Greeting(db) {
           }
         }
       } catch (err) {
-        console.error(err)
+        console.log(err)
       }
       
     }
   }
 
-  async function getCount() {
-    try {
-      const result = await db.one('SELECT COUNT(*) as row_count FROM users')
-      return result.row_count
-    } catch (err) {
-      console.error(err)
-    }
+  function getCount() {
+ 
+    return nameSet.size
   }
 
   function getMessage() {
     return { message: message };
   }
 
-  async function getUsers() {
-    try {
-      const users = await db.any('SELECT * FROM users')
-      return users
-    } catch (err) {
-      console.error(err)
-    }
-  }
-
-  async function reset() {
+  function reset() {
     message = ""
     language = undefined
-    try {
-      await db.none('DELETE FROM users')
-    }
-    catch (err) {
-      console.error(err)
-    }
+    nameSet.clear()
   }
 
   return {
@@ -79,7 +61,6 @@ export default function Greeting(db) {
     getMessage,
     setLanguage,
     getCount,
-    reset,
-    getUsers
+    reset
   };
 }

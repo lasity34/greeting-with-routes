@@ -54,15 +54,6 @@ export default function Greeting(db) {
     return { message: message };
   }
 
-  async function getUsers() {
-    try {
-      const users = await db.any('SELECT * FROM users')
-      return users
-    } catch (err) {
-      console.error(err)
-    }
-  }
-
   async function reset() {
     message = ""
     language = undefined
@@ -79,7 +70,6 @@ export default function Greeting(db) {
     getMessage,
     setLanguage,
     getCount,
-    reset,
-    getUsers
+    reset
   };
 }

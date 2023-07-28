@@ -193,12 +193,6 @@ label {
 
 /* greeted button */
 
-.greet_button_container {
-    display: flex;
-    justify-content: center;
-    margin-top: 2em;
-}
-
 .greeted-button {
     background-color: rgb(91, 92, 21);
     color: white;
@@ -207,7 +201,7 @@ label {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 1.2rem;
+    font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;

@@ -32,15 +32,14 @@
     <p id="message">{{flashMessage.message}}</p>
   </div>
     </div>
-<div class="count_container">
+ <div class="count_container">
     <div>
     <h2>Number of people greeted</h2>
-    <span>{{count.row_count}}</span>
-    <form action="/greeted" method="GET" class="greet_button_container">
-        <button type="submit" class="greeted-button">Greeted users</button>
+    <span>{{count}}</span>
+    <form action="/greeted" method="GET">
+    <button type="submit"></button>
     </form>
     </div>
-</div>
-
+ </div>
 
 <script src="/js/script.js"></script>
