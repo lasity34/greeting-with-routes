@@ -1,8 +1,8 @@
+import pgPromise from "pg-promise";
 
 
 
-
-export default function Greeting(db) {
+export default function Greeting() {
   let message = "";
   let language;
   let nameSet = new Set()

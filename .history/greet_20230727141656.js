@@ -1,8 +1,19 @@
+import pgPromise from "pg-promise";
+import dotenv from "dotenv"
+
+dotenv.config()
+
+
+const db = pgPromise({
+    host: 'dpg-cj0h3ab438irjjd0map0-a.oregon-postgres.render.com',
+    database: 'greetings_with_routes_liyd',
+    user: 'greetings_with_routes_liyd_user',
+    password: 'e3MSmoGN4d9xxKRZkw87zeSFPPR6LCEY'
+});
 
 
 
-
-export default function Greeting(db) {
+export default function Greeting() {
   let message = "";
   let language;
   let nameSet = new Set()

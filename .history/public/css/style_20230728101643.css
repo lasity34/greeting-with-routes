@@ -92,13 +92,13 @@ label {
     font-size: 3rem;  /* Sets the font size */
     font-weight: bold; /* Makes the text bold */
     text-align: center; /* Centers the text */
-    transition: 1s ease-in-out;
+    /* transition: 1s ease-in-out; */
 
     /* Adding some animation */
-    animation: fade-in-out 4s;
+    /* animation: fade-in-out 4s; */
 }
 
-@keyframes fade-in-out {
+/* @keyframes fade-in-out {
     0% {
         opacity: 0;
     }
@@ -106,7 +106,7 @@ label {
         opacity: 1;
     }
    
-}
+} */
 
 /* language */
 

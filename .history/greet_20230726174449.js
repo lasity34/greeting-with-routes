@@ -1,8 +1,11 @@
+import pgPromise from "pg-promise";
+import dotenv from "dotenv"
 
+dotenv.config()
 
+const db = pgPromise(process.env.DATABASE_URL)
 
-
-export default function Greeting(db) {
+export default function Greeting() {
   let message = "";
   let language;
   let nameSet = new Set()
