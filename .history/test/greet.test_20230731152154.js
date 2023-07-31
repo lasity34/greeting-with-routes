@@ -15,7 +15,7 @@ describe("Greeting function", function () {
   it("This should return a greeting after the name is entered", async function () {
     await greeting.setLanguage("English");
     const message = await greeting.greetMessage("bjorn");
-    assert.equal("Hello, Bjorn", message);
+    assert.equal("Hello, bjorn", message);
   });
 
   it("This should return an error if there is no name or language", async function () {
@@ -72,7 +72,6 @@ describe("reset", function () {
     const message = await greeting.greetMessage("");
     assert.equal('Please type in your name and select a language', message);
   });
-  
 });
 
 describe("Counter", function () {

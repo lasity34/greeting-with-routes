@@ -345,8 +345,8 @@ label {
   
 
   @media (max-width: 768px) {
-   html{
-        font-size: 10px;
+    .title {
+        font-size: 3rem;
     }
     .message_display p {
         font-size: 2rem;
@@ -355,21 +355,4 @@ label {
         font-size: 3rem;
     }
     /* Add any other necessary adjustments here */
-}
-
-@media (max-width: 768px) {
-  .row {
-    
-  }
-  .greeting_container, .dummy_container, .count_container {
-      width: 100%;
-      max-width: 100%;
-  }
-  .language-container {
-    
-  }
-  .greeting button {
-      width: 70%;
-  }
-  /* Add any other necessary adjustments here */
 }

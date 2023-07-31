@@ -8,8 +8,6 @@ dotenv.config();
 const db = pgPromise()(process.env.DATABASE_URL);
 
 describe("Greeting function", function () {
-  this.timeout(5000); // Optional: Increase timeout if needed
-
   const greeting = Greeting(db);
 
   it("This should return a greeting after the name is entered", async function () {
@@ -52,8 +50,6 @@ describe("Greeting function", function () {
 });
 
 describe("reset", function () {
-  this.timeout(5000);
-
   const greeting = Greeting(db);
 
   it("count should reset when reset is clicked ", async function () {
@@ -70,14 +66,11 @@ describe("reset", function () {
     await greeting.getCount();
     await greeting.reset();
     const message = await greeting.greetMessage("");
-    assert.equal('Please type in your name and select a language', message);
+    assert.equal("Please type in your name and select a language", message);
   });
-  
 });
 
 describe("Counter", function () {
-  
-
   const greeting = Greeting(db);
 
   it("This should test the count", async function () {
@@ -88,5 +81,5 @@ describe("Counter", function () {
   });
   after(function () {
     db.$pool.end;
-});
+  });
 });

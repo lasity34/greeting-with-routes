@@ -72,7 +72,6 @@ describe("reset", function () {
     const message = await greeting.greetMessage("");
     assert.equal('Please type in your name and select a language', message);
   });
-  
 });
 
 describe("Counter", function () {
