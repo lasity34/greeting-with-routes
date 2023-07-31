@@ -7,11 +7,8 @@ body {
     background-size: cover;
     background-attachment: fixed;
     color: bisque;
-    position: relative; /* Add this to contain the absolute positioning of the ::before element */
-    margin: 0; /* Ensure that there's no margin */
-    overflow: hidden; /* Prevent any accidental overflow */
-    min-height: 100vh; /* Set a minimum height to ensure full coverage */
 }
+
 
 body::before {
     content: "";
@@ -167,7 +164,6 @@ label {
     text-align: center;
     margin: 0 auto;;
     width: 60%;
-    padding-bottom: 0.52em;
 }
 
 /* reset */
@@ -215,7 +211,6 @@ label {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: 1em;
 }
 
 .greeted-button:hover {
@@ -314,7 +309,6 @@ label {
   .greet-button {
     padding: 1em 2em;
     font-size: 16px;
-    border-radius: 10px;
     border: none;
     cursor: pointer;
     text-align: center;
@@ -332,7 +326,7 @@ label {
   }
   
   .greet-button {
-    background-color: rgb(44, 96, 44);
+    background-color: rgb(78, 159, 78);
     color: bisque;
     margin-left: 10px;
   }

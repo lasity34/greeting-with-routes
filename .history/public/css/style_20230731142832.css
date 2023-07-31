@@ -7,11 +7,8 @@ body {
     background-size: cover;
     background-attachment: fixed;
     color: bisque;
-    position: relative; /* Add this to contain the absolute positioning of the ::before element */
-    margin: 0; /* Ensure that there's no margin */
-    overflow: hidden; /* Prevent any accidental overflow */
-    min-height: 100vh; /* Set a minimum height to ensure full coverage */
 }
+
 
 body::before {
     content: "";
@@ -314,7 +311,6 @@ label {
   .greet-button {
     padding: 1em 2em;
     font-size: 16px;
-    border-radius: 10px;
     border: none;
     cursor: pointer;
     text-align: center;
