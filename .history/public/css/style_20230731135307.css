@@ -196,7 +196,7 @@ label {
 .greet_button_container {
     display: flex;
     justify-content: center;
-  
+    margin-top: 2em;
 }
 
 .greeted-button {
@@ -296,8 +296,7 @@ label {
 
   .button_container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-around;
   }
 
   .button_container button {
@@ -305,7 +304,7 @@ label {
   }
 
   .home_button {
-    background-color: rgb(92, 92, 165);
+    background-color: blue;
     color: white;
     padding: 10px 20px;
     font-size: 16px;
@@ -315,12 +314,11 @@ label {
   }
   
   .greet-button {
-    background-color: rgb(78, 159, 78);
-    color: bisque;
+    background-color: green;
+    color: white;
     padding: 10px 20px;
     font-size: 16px;
     border: none;
     cursor: pointer;
     text-align: center;
-    margin-left: 10px;
   }

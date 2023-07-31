@@ -196,7 +196,7 @@ label {
 .greet_button_container {
     display: flex;
     justify-content: center;
-  
+    margin-top: 2em;
 }
 
 .greeted-button {
@@ -322,5 +322,4 @@ label {
     border: none;
     cursor: pointer;
     text-align: center;
-    margin-left: 10px;
   }

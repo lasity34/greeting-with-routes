@@ -196,7 +196,7 @@ label {
 .greet_button_container {
     display: flex;
     justify-content: center;
-  
+    margin-top: 2em;
 }
 
 .greeted-button {
