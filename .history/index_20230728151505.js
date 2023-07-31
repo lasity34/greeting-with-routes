@@ -59,7 +59,6 @@ createTable().then(() => {
   app.get("/", async (req, res) => {
     const flashMessage = req.flash("info")[0]
     const count = await greeting.getCount()
-    console.log(count)
     res.render("index", {
       flashMessage: flashMessage,
       count: count,

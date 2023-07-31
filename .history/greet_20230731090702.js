@@ -1,14 +1,14 @@
 export default function Greeting(db) {
 
   let language;
-  let message = ''
+
   async function setLanguage(languageInput) {
     language = languageInput;
     return Promise.resolve(); 
   }
 
   async function greetMessage(name) {
-
+    let message;
     if (!name && !language) {
       message = "Please type in your name and select a language";
     } else if (!name) {
@@ -32,13 +32,10 @@ export default function Greeting(db) {
             message = `Hello, ${name}`;
           }
 
-          let userCount = 1
-
           if (user) {
-            userCount = user.count + 1;
-            await db.none('UPDATE users SET count = $2 WHERE name = $1', [name, userCount])
+            await db.none('UPDATE users SET count = count + 1 WHERE name = $1', [name])
           }  else {
-            await db.none('INSERT INTO users (name, count) VALUES($1, $2)', [name, userCount])
+            await db.none('INSERT INTO users (name, count) VALUES($1, 1)', [name])
   
           }
 
@@ -59,8 +56,8 @@ export default function Greeting(db) {
 
   async function getCount() {
     try {
-      const result = await db.one('SELECT COUNT(DISTINCT name) as total_count FROM users')
-      return result.total_count;
+      const result = await db.one('SELECT COUNT(*) as row_count FROM users')
+      return result.row_count
     } catch (err) {
       console.error(err)
     }

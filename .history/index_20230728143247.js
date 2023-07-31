@@ -18,7 +18,7 @@ async function createTable() {
     );
     console.log("Table created successfully");
   } catch (err) {
-    console.error("Failed to create table", err);
+    console.log("Failed to create table", err);
   }
 }
 
@@ -47,28 +47,25 @@ createTable().then(() => {
 
   app.use(flash());
 
-  app.post("/greeting", async  (req, res) => {
-    await greeting.setLanguage(req.body.language);
-    const message = await greeting.greetMessage(req.body.name);
-    
+  app.get("/", (req, res) => {
+    const message = greeting.getMessage();
     req.flash("info", message);
-    res.redirect("/");
-});
-
-
-  app.get("/", async (req, res) => {
-    const flashMessage = req.flash("info")[0]
-    const count = await greeting.getCount()
-    console.log(count)
     res.render("index", {
-      flashMessage: flashMessage,
-      count: count,
+      flashMessage: req.flash("info")[0],
+      message: greeting.getMessage(),
+      count: greeting.getCount(),
     });
   });
 
   app.get("/greeted", (req, res) => {});
 
- 
+  app.post("/greeting", async  (req, res) => {
+    greeting.setLanguage(req.body.language);
+    
+    const message = greeting.greetMessage(req.body.name);
+    req.session.message = message
+    res.redirect("/");
+  });
 
   app.post("/reset", (req, res) => {
     greeting.reset();

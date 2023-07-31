@@ -50,18 +50,16 @@ createTable().then(() => {
   app.post("/greeting", async  (req, res) => {
     await greeting.setLanguage(req.body.language);
     const message = await greeting.greetMessage(req.body.name);
-    
     req.flash("info", message);
     res.redirect("/");
-});
-
+  });
 
   app.get("/", async (req, res) => {
     const flashMessage = req.flash("info")[0]
     const count = await greeting.getCount()
-    console.log(count)
     res.render("index", {
       flashMessage: flashMessage,
+      message: flashMessage,
       count: count,
     });
   });

@@ -26,7 +26,7 @@ describe("Greeting function", function () {
 
   it("This should return an error if there is no name ", async function () {
     await greeting.setLanguage("English");
-    const message = await greeting.greetMessage("");
+    const message = greeting.greetMessage("");
     assert.equal("Please type in your name", message);
   });
   it("This should return an error if there is no language selected ", async function () {
@@ -60,29 +60,26 @@ describe("reset", function () {
     await greeting.setLanguage("Welsh");
     await greeting.greetMessage("Bruce");
     await greeting.getCount();
-    await greeting.reset();
-    const count = await greeting.getCount();
+   await greeting.reset();
+    const count = await greeting.getCount()
     assert.equal(0, count);
   });
   it("message should reset when reset is clicked ", async function () {
-    await greeting.setLanguage("Welsh");
-    await greeting.greetMessage("Bruce");
-    await greeting.getCount();
-    await greeting.reset();
-    const message = await greeting.greetMessage("");
-    assert.equal('Please type in your name and select a language', message);
+   await  greeting.setLanguage("Welsh");
+  await   greeting.greetMessage("Bruce");
+  await   greeting.getCount();
+  await  greeting.reset();
+  const message = await greeting.greetMessage("")
+    assert.equal("", message);
   });
 });
 
 describe("Counter", function () {
-  this.timeout(5000);
+  const greeting = Greeting();
 
-  const greeting = Greeting(db);
-
-  it("This should test the count", async function () {
-    await greeting.setLanguage("English");
-    await greeting.greetMessage("bjorn");
-    const count = await greeting.getCount();
-    assert.equal(1, count);
+  it("This should test the count", function () {
+    greeting.setLanguage("English");
+    greeting.greetMessage("bjorn");
+    assert.equal(1, greeting.getCount());
   });
 });

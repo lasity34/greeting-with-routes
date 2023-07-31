@@ -70,7 +70,7 @@ describe("reset", function () {
     await greeting.getCount();
     await greeting.reset();
     const message = await greeting.greetMessage("");
-    assert.equal('Please type in your name and select a language', message);
+    assert.equal("", message);
   });
 });
 

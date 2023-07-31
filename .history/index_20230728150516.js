@@ -47,28 +47,27 @@ createTable().then(() => {
 
   app.use(flash());
 
-  app.post("/greeting", async  (req, res) => {
-    await greeting.setLanguage(req.body.language);
-    const message = await greeting.greetMessage(req.body.name);
-    
-    req.flash("info", message);
-    res.redirect("/");
-});
-
-
   app.get("/", async (req, res) => {
-    const flashMessage = req.flash("info")[0]
+    const message = req.session.message;
+    req.session.message = null;
     const count = await greeting.getCount()
-    console.log(count)
+    req.flash("info", message);
     res.render("index", {
-      flashMessage: flashMessage,
+      flashMessage: req.flash("info")[0],
+      message: message,
       count: count,
     });
   });
 
   app.get("/greeted", (req, res) => {});
 
- 
+  app.post("/greeting", async  (req, res) => {
+    greeting.setLanguage(req.body.language);
+    
+    const message = await greeting.greetMessage(req.body.name);
+    req.session.message = message
+    res.redirect("/");
+  });
 
   app.post("/reset", (req, res) => {
     greeting.reset();

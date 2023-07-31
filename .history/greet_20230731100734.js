@@ -32,13 +32,10 @@ export default function Greeting(db) {
             message = `Hello, ${name}`;
           }
 
-          let userCount = 1
-
           if (user) {
-            userCount = user.count + 1;
-            await db.none('UPDATE users SET count = $2 WHERE name = $1', [name, userCount])
+            await db.none('UPDATE users SET count = count + 1 WHERE name = $1', [name])
           }  else {
-            await db.none('INSERT INTO users (name, count) VALUES($1, $2)', [name, userCount])
+            await db.none('INSERT INTO users (name, count) VALUES($1, 1)', [name])
   
           }
 
@@ -59,7 +56,7 @@ export default function Greeting(db) {
 
   async function getCount() {
     try {
-      const result = await db.one('SELECT COUNT(DISTINCT name) as total_count FROM users')
+      const result = await db.one('SELECT SUM(count) as total_count FROM users')
       return result.total_count;
     } catch (err) {
       console.error(err)
