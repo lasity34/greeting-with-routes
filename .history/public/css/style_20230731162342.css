@@ -288,7 +288,7 @@ label {
     background-color: rgb(84, 36, 36); /* Changes the background color when hovered */
   }
   
-/* user greeted */
+
 
   .user_greeted h1{
     font-size: 2rem;
@@ -355,7 +355,9 @@ label {
     .message_display p {
         font-size: 2rem;
     }
-  
+    .count_container span {
+        font-size: 3rem;
+    }
     /* Add any other necessary adjustments here */
 }
 
@@ -383,46 +385,6 @@ label {
       width: 70%;
   }
  .count_container {
-    height: 30vh;
- }
-
- .count_container span {
     height: 20vh;
-    font-size: 2rem;
-    padding-bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
  }
 }
-
-
-@media only screen and (max-width: 768px) {
-    .user_greeted h1 {
-      font-size: 1.5rem;
-    }
-  
-    .user_greeted h3 {
-      font-size: 2rem;
-      margin-top: 2em;
-    }
-  
-    .button_container {
-      flex-direction: column; /* Stack buttons vertically on small screens */
-    }
-  
-    .button_container button {
-      height: 8vh;
-    }
-  
-    .home_button,  
-    .greet-button {
-      padding: 0.5em 1em;
-      font-size: 14px;
-    }
-  
-    .greet_btn {
-      max-width: 100px;
-    }
-  }
-  
