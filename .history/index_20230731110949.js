@@ -66,10 +66,10 @@ createTable().then(() => {
     });
   });
 
-  app.get("/greeted", async (req, res) => {
-    const users = await greeting.getUsers()
+  app.get("/greeted", (req, res) => {
+
     res.render("greeted", {
-      users: users
+      
     })
   });
 

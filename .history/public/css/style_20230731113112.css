@@ -239,24 +239,24 @@ label {
   .greeted_container td {
 
     padding: 8px;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
 
   .greeted_container td {
     text-decoration: underline;
-    text-align: center;
   }
 
   .back-button {
-    background-color: #539055;
-    color: bisque;
+    background-color: #4CAF50;
+    color: white;
     padding: 14px 20px;
-    margin: 2em 4em;
+    margin: 2em auto;
     border: none;
     cursor: pointer;
+    width: auto;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   
   .back-button:hover {

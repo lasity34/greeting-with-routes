@@ -1,17 +1,21 @@
 
 
 <div class="greeted_container">
-  <h1>List of Greeted Users:</h1>
+  <h1>List of Greeted Users</h1>
   <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Count</th>
+      </tr>
+    </thead>
     <tbody>
       {{#each users}}
         <tr>
           <td>{{this.name}}</td>
+          <td>{{this.count}}</td>
         </tr>
       {{/each}}
     </tbody>
   </table>
-  <form action="/" method="get">
-    <button type="submit" class="back-button">Back to Home</button>
-  </form>
 </div>
