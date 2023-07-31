@@ -5,11 +5,10 @@ import Greeting from "./greet.js";
 import flash from "express-flash";
 import session from "express-session";
 import pgPromise from "pg-promise";
+import { Client } from "pg";
 import dotenv from "dotenv";
 
 dotenv.config();
-
-
 
 const db = pgPromise()(process.env.DATABASE_URL);
 

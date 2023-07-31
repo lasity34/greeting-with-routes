@@ -1,1 +1,0 @@
-[![Node.js CI](https://github.com/lasity34/greeting-with-routes/actions/workflows/node.js.yml/badge.svg)](https://github.com/lasity34/greeting-with-routes/actions/workflows/node.js.yml)
