@@ -8,9 +8,19 @@ dotenv.config();
 const db = pgPromise()(process.env.DATABASE_URL);
 
 describe("Greeting function", function () {
-  this.timeout(5000); // Optional: Increase timeout if needed
+
 
   const greeting = Greeting(db);
+
+  beforeEach(async function () {
+    try {
+        // clean the tables before each test run
+        await db.none("TRUNCATE TABLE users RESTART IDENTITY CASCADE;");
+    } catch (err) {
+        console.log(err);
+        throw err;
+    }
+});
 
   it("This should return a greeting after the name is entered", async function () {
     await greeting.setLanguage("English");
@@ -49,6 +59,9 @@ describe("Greeting function", function () {
     const message = await greeting.greetMessage("Bruce");
     assert.equal("Shwmae, Bruce", message);
   });
+  after(function () {
+    db.$pool.end;
+});
 });
 
 describe("reset", function () {
@@ -72,10 +85,11 @@ describe("reset", function () {
     const message = await greeting.greetMessage("");
     assert.equal('Please type in your name and select a language', message);
   });
+  
 });
 
 describe("Counter", function () {
-  this.timeout(5000);
+  
 
   const greeting = Greeting(db);
 

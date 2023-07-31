@@ -377,7 +377,5 @@ label {
   .greeting button {
       width: 70%;
   }
- .count_container {
-    height: 30vh;
- }
+  /* Add any other necessary adjustments here */
 }
