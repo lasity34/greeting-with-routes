@@ -311,17 +311,12 @@ label {
     border: none;
     cursor: pointer;
     text-align: center;
-    transition: 0.3s; /* Add this for smooth hover transition */
   }
-  
+
   .home_button {
     background-color: rgb(92, 92, 165);
     color: white;
-  }
-  
-  .home_button:hover {
-    background-color: rgb(72, 72, 145); /* Slightly darker shade for hover */
-    color: lightgray; /* Change text color on hover if needed */
+ 
   }
   
   .greet-button {
@@ -329,9 +324,3 @@ label {
     color: bisque;
     margin-left: 10px;
   }
-  
-  .greet-button:hover {
-    background-color: rgb(58, 139, 58); /* Slightly darker shade for hover */
-    color: white; /* Change text color on hover if needed */
-  }
-  
