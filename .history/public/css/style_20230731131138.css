@@ -1,6 +1,6 @@
 
 body {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Alegreya Sans SC', sans-serif;
     background-image: url('../images/greeting_background.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -222,7 +222,6 @@ label {
 .greeted_container {
    display: flex;
    justify-content: center;
-   align-content: center;
    flex-direction: column;
 }
   
@@ -236,19 +235,17 @@ label {
     width: 40%;
   }
   
-  
-  .greeted_container tr {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .greeted_container th,
+  .greeted_container td {
+
+    padding: 8px;
+    font-size: 2.5rem;
   }
+  
 
   .greeted_container td {
     text-decoration: underline;
     text-align: center;
-    align-self: center;
-    padding: 4px;
-    font-size: 2rem;
   }
 
   .back-button {
@@ -269,27 +266,15 @@ label {
   .view {
     cursor: pointer;
     color: bisque;
-    background-color: rgb(149, 51, 29);
+    background-color: rgb(114, 110, 110);
     border: none; /* Removes the default border */
     padding: 10px 15px; /* Adds padding around the text */
     text-transform: uppercase; /* Makes the text uppercase */
     font-weight: bold; /* Makes the text bold */
     transition: background-color 0.3s ease; /* Adds a smooth color transition */
-    border-radius: 10px;
   }
   
   .view:hover {
-    background-color: rgb(84, 36, 36); /* Changes the background color when hovered */
+    background-color: rgb(94, 90, 90); /* Changes the background color when hovered */
   }
   
-
-
-  .user_greeted h1{
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  .user_greeted h3 {
-    font-size: 3rem;
-    margin-top: 4em;
-  }

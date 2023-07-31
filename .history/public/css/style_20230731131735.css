@@ -1,6 +1,6 @@
 
 body {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Alegreya Sans SC', sans-serif;
     background-image: url('../images/greeting_background.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -282,14 +282,3 @@ label {
     background-color: rgb(84, 36, 36); /* Changes the background color when hovered */
   }
   
-
-
-  .user_greeted h1{
-    font-size: 2rem;
-    text-align: center;
-  }
-
-  .user_greeted h3 {
-    font-size: 3rem;
-    margin-top: 4em;
-  }

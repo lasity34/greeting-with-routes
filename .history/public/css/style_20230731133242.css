@@ -1,6 +1,6 @@
 
 body {
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Alegreya Sans SC', sans-serif;
     background-image: url('../images/greeting_background.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -285,11 +285,10 @@ label {
 
 
   .user_greeted h1{
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
   }
 
   .user_greeted h3 {
-    font-size: 3rem;
-    margin-top: 4em;
+    font-size: 2rem;
   }

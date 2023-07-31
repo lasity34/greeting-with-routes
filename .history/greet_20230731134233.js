@@ -13,8 +13,6 @@ export default function Greeting(db) {
 
   async function greetMessage(name) {
 
-    name = capitalizeFirstLetter(name);
-
     if (!name && !language) {
       message = "Please type in your name and select a language";
     } else if (!name) {

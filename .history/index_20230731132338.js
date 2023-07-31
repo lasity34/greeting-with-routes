@@ -59,6 +59,7 @@ createTable().then(() => {
   app.get("/", async (req, res) => {
     const flashMessage = req.flash("info")[0]
     const count = await greeting.getCount()
+    console.log(count)
     res.render("index", {
       flashMessage: flashMessage,
       count: count,
@@ -75,14 +76,11 @@ createTable().then(() => {
 
   app.get('/counter/:name', async (req,res) => {
     const userName = req.params.name;
-    const users = await greeting.getUsers();
-    const user = users.find(u => u.name === userName);
-    
+    const users = await greeting.getUsers()
     res.render("counter", {
-      user: user
-    });
-  });
-  
+      users: users
+    })
+  })
  
 
   app.post("/reset", (req, res) => {
