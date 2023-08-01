@@ -21,7 +21,7 @@ const connection = {
 const db = pgp(connection);
 
 
-createTable(db).then(() => {
+createTable().then(() => {
   const app = express();
   const greeting = Greeting(db);
 
