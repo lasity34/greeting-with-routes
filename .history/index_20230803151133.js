@@ -11,7 +11,6 @@ import bodyParser from "body-parser";
 
 import greeting_route from "./routes/greeting.js";
 import greeted_route from "./routes/greeted.js";
-import counter_route from "./routes/counter.js";
 
 import greetingService from "./services/greetingService.js";
 
@@ -37,7 +36,7 @@ createTable(db).then(() => {
 
   const greetingRoute = greeting_route(greeting_service)
   const greetedUser = greeted_route(greeting_service)
-  const counter = counter_route(greeting_service)
+
 
 
   app.engine("handlebars", engine());
@@ -66,16 +65,19 @@ createTable(db).then(() => {
   // greeting page
   app.post("/greeting", greetingRoute.add);
   app.get("/", greetingRoute.show);
-  app.post("/reset", greetingRoute.reset);
 
   // greeted page
   app.get("/greeted", greetedUser.showUser);
 
-  // counter
-  app.get('/counter/:name', counter.get);
+
+  app.get('/counter/:name', );
   
  
 
+  app.post("/reset", (req, res) => {
+    greeting.reset();
+    res.redirect("/");
+  });
 
 
 

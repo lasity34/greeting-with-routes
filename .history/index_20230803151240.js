@@ -66,16 +66,19 @@ createTable(db).then(() => {
   // greeting page
   app.post("/greeting", greetingRoute.add);
   app.get("/", greetingRoute.show);
-  app.post("/reset", greetingRoute.reset);
 
   // greeted page
   app.get("/greeted", greetedUser.showUser);
 
-  // counter
-  app.get('/counter/:name', counter.get);
+
+  app.get('/counter/:name',  );
   
  
 
+  app.post("/reset", (req, res) => {
+    greeting.reset();
+    res.redirect("/");
+  });
 
 
 

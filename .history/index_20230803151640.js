@@ -66,7 +66,6 @@ createTable(db).then(() => {
   // greeting page
   app.post("/greeting", greetingRoute.add);
   app.get("/", greetingRoute.show);
-  app.post("/reset", greetingRoute.reset);
 
   // greeted page
   app.get("/greeted", greetedUser.showUser);
@@ -76,6 +75,7 @@ createTable(db).then(() => {
   
  
 
+  app.post("/reset", );
 
 
 

@@ -1,22 +1,13 @@
 import express from "express";
 import { engine } from "express-handlebars";
+import bodyParser from "body-parser";
+import Greeting from "./greet.js";
 import flash from "express-flash";
 import session from "express-session";
 import pgPromise from "pg-promise";
 import dotenv from "dotenv";
 import { createTable } from "./tabelsql.js";
-import bodyParser from "body-parser";
-
-
-
 import greeting_route from "./routes/greeting.js";
-import greeted_route from "./routes/greeted.js";
-import counter_route from "./routes/counter.js";
-
-import greetingService from "./services/greetingService.js";
-
-
-const app = express();
 dotenv.config();
 
 const pgp = pgPromise();
@@ -31,21 +22,13 @@ const db = pgp(connection);
 
 
 createTable(db).then(() => {
-
-  const greeting_service = greetingService(db)
-
-
-  const greetingRoute = greeting_route(greeting_service)
-  const greetedUser = greeted_route(greeting_service)
-  const counter = counter_route(greeting_service)
-
+  const app = express();
+  const greeting = Greeting(db);
 
   app.engine("handlebars", engine());
   app.set("view engine", "handlebars");
   app.set("views", "./views");
   app.use(express.static("public"));
-
-
 
   // parse application/x-www-form-urlencoded
   app.use(bodyParser.urlencoded({ extended: false }));
@@ -63,19 +46,42 @@ createTable(db).then(() => {
 
   app.use(flash());
 
-  // greeting page
-  app.post("/greeting", greetingRoute.add);
-  app.get("/", greetingRoute.show);
-  app.post("/reset", greetingRoute.reset);
+  app.post("/greeting", );
 
-  // greeted page
-  app.get("/greeted", greetedUser.showUser);
 
-  // counter
-  app.get('/counter/:name', counter.get);
+  app.get("/", async (req, res) => {
+    const flashMessage = req.flash("info")[0]
+    const count = await greeting.getCount()
+    res.render("index", {
+      flashMessage: flashMessage,
+      count: count,
+    });
+  });
+
+  app.get("/greeted", async (req, res) => {
+    const users = await greeting.getUsers()
+    res.render("greeted", {
+      users: users
+    })
+  });
+
+
+  app.get('/counter/:name', async (req,res) => {
+    const userName = req.params.name;
+    const users = await greeting.getUsers();
+    const user = users.find(u => u.name === userName);
+    
+    res.render("counter", {
+      user: user
+    });
+  });
   
  
 
+  app.post("/reset", (req, res) => {
+    greeting.reset();
+    res.redirect("/");
+  });
 
 
 
