@@ -87,6 +87,7 @@ export default function greetingService(db) {
     return {
       greetMessage,
       setLanguage,
+      getCount,
       reset,
       getUsers
     };

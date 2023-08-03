@@ -38,7 +38,7 @@ createTable(db).then(() => {
   const counter_service = counterService(db)
 
 
-  const greetingRoute = greeting_route(greeting_service, counter_service)
+  const greetingRoute = greeting_route(greeting_service)
   const greetedUser = greeted_route(greeting_service)
   const counter = counter_route(counter_service, greeting_service)
 

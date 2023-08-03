@@ -4,16 +4,15 @@ import flash from "express-flash";
 import session from "express-session";
 import pgPromise from "pg-promise";
 import dotenv from "dotenv";
-import { createTable } from "./services/tabelsql.js";
+import { createTable } from "./tabelsql.js";
 import bodyParser from "body-parser";
 
 
-// routes
+
 import greeting_route from "./routes/greeting.js";
 import greeted_route from "./routes/greeted.js";
 import counter_route from "./routes/counter.js";
 
-// services
 import greetingService from "./services/greetingService.js";
 import counterService from "./services/counterService.js";
 
@@ -38,9 +37,9 @@ createTable(db).then(() => {
   const counter_service = counterService(db)
 
 
-  const greetingRoute = greeting_route(greeting_service, counter_service)
+  const greetingRoute = greeting_route(greeting_service)
   const greetedUser = greeted_route(greeting_service)
-  const counter = counter_route(counter_service, greeting_service)
+  const counter = counter_route(counter_service)
 
 
   app.engine("handlebars", engine());
