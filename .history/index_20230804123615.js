@@ -34,12 +34,12 @@ const db = pgp(connection);
 createTable(db).then(() => {
 
   const greeting_service = greetingService(db)
-  
+  const counter_service = counterService(db)
 
 
-  const greetingRoute = greeting_route(greeting_service)
+  const greetingRoute = greeting_route(greeting_service, counter_service)
   const greetedUser = greeted_route(greeting_service)
-  const counter = counter_route(greeting_service)
+  const counter = counter_route(counter_service, greeting_service)
 
 
   app.engine("handlebars", engine());

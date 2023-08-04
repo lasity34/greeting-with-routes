@@ -62,9 +62,9 @@ describe("reset", function () {
   it("count should reset when reset is clicked ", async function () {
     await greeting.setLanguage("Welsh");
     await greeting.greetMessage("Bruce");
-    await greeting.getCount();
+    await await greeting.getCount();
     await greeting.reset();
-    const count =  await greeting.getCount();
+    const count = await counter.getCount();
     assert.equal(0, count);
   });
   it("message should reset when reset is clicked ", async function () {
