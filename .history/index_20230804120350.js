@@ -4,7 +4,7 @@ import flash from "express-flash";
 import session from "express-session";
 import pgPromise from "pg-promise";
 import dotenv from "dotenv";
-import { createTable } from "./tabelsql.js";
+import { createTable } from "./services/tabelsql.js";
 import bodyParser from "body-parser";
 
 
