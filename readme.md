@@ -1,23 +1,33 @@
 [![Node.js CI](https://github.com/lasity34/greetings-webapp/actions/workflows/node.js.yml/badge.svg)](https://github.com/lasity34/greetings-webapp/actions/workflows/node.js.yml)
 
 
-
 # Greetings Web App with ExpressJS and PostgreSQL 🌐🛠️
 
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Features](#features)
-3. [Routes](#routes)
-4. [Setup](#setup)
-5. [Deployment](#deployment)
-6. [Learnings](#learnings)
+2. [Tech Stack](#tech-stack)
+3. [Features](#features)
+4. [Routes](#routes)
+5. [Setup](#setup)
+6. [Deployment](#deployment)
+7. [Learnings](#learnings)
 
 ---
 
 ## Overview 📝
 
 This project is a simple web application built with ExpressJS and PostgreSQL. It allows users to receive greetings and keeps track of the number of times each user has been greeted.
+
+---
+
+## Tech Stack 💻
+
+- **ExpressJS**: Used for the back-end server setup and route handling.
+- **PostgreSQL**: Employed for the database to store information about greeted users.
+- **HTML**: Utilized for creating the front-end form and other UI elements.
+- **dotenv**: Used for managing environment variables like `DATABASE_URL`.
+- **express-flash**: Implemented for displaying warning messages on form validation.
 
 ---
 
@@ -60,4 +70,5 @@ This project is a simple web application built with ExpressJS and PostgreSQL. It
 - Gained hands-on experience with form validation using `express-flash`.
 - Understood how to deploy an application with a remote PostgreSQL database.
 - Mastered environment variable management using `dotenv`.
+
 
